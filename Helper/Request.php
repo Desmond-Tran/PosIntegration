@@ -120,7 +120,7 @@ class Request extends AbstractData
         $body = $this->getCustomerBody($customer, false);
         $response = $this->sendCurl(Zend_Http_Client::PUT, $url, $this->getHeader(), $body);
 
-        return isset($response['client']['id']) ? (int) $response['client']['id'] : 0;
+        return isset($response['data']['client']['id']) ? (int) $response['data']['client']['id'] : 0;
     }
 
     /**
@@ -188,7 +188,7 @@ class Request extends AbstractData
             $data['pointValue'] = 0;
             $data['image'] = '';
             $data['active'] = 'true';
-            $data['createdOutlet'] = 'Main Outlet';
+            $data['createdOutlet'] = '000 HQ';
             $data['defaultSalesType'] = 'Retail';
         }
 
